@@ -1,3 +1,3 @@
 word=str(input())
 for a in word:
-    print("'{}'".format(a))
+    print("'{}'".format(a));
