@@ -1,4 +1,4 @@
-package sort;
+package inflearn.sort;
 
 public class SortTest1 {
 	public static void main(String[] args) {

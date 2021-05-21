@@ -1,4 +1,4 @@
-package map;
+package inflearn.map;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +16,10 @@ public class MapTest1 {
 		}
 		Map<Character, Integer> map = new HashMap<>();
 		for (char x : s.toCharArray()) {
-			// if (map.containsKey(x)) {
-			// 	map.put(x, map.get(x) + 1);
+			// if (inflearn.map.containsKey(x)) {
+			// 	inflearn.map.put(x, inflearn.map.get(x) + 1);
 			// } else {
-			// 	map.put(x, 1);
+			// 	inflearn.map.put(x, 1);
 			// }
 			map.put(x, map.getOrDefault(x, 0) + 1);
 		}

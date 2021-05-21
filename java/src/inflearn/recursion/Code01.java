@@ -1,4 +1,4 @@
-package recursion;
+package inflearn.recursion;
 
 public class Code01 {
 

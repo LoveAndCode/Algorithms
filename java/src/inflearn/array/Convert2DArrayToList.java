@@ -1,4 +1,4 @@
-package array;
+package inflearn.array;
 
 import java.util.ArrayList;
 import java.util.List;

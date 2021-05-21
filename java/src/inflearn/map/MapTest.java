@@ -1,4 +1,4 @@
-package map;
+package inflearn.map;
 
 import java.util.HashMap;
 import java.util.Iterator;
