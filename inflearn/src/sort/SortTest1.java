@@ -1,6 +1,6 @@
 package sort;
 
-public class CompareTo1 {
+public class SortTest1 {
 	public static void main(String[] args) {
 		// String version1 = "8.5.2.4";
 		// String version2 = "8.5.3";
