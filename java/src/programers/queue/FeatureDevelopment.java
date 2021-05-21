@@ -1,9 +1,8 @@
-package programers.stack;
+package programers.queue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.IntStream;
 
