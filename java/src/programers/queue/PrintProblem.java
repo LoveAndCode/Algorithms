@@ -30,24 +30,17 @@ public class PrintProblem {
 		}
 
 		while (true) {
-			int target = queue.peek();
+			int target = queue.poll();
 			if (isBiggerExist(target, queue, priorities)) {
-				queue.poll();
 				queue.offer(target);
-			} else if (target == location) {
-				return count;
 			} else {
-				break;
+				if (target == location) {
+					return count;
+				} else {
+					count++;
+				}
 			}
 		}
-
-		for (int target : queue) {
-			if (location == target) {
-				return count;
-			}
-			count++;
-		}
-		return 0;
 	}
 
 	private boolean isBiggerExist(int target, Queue<Integer> compare, int[] priorites) {
