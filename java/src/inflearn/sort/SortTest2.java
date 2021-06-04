@@ -1,7 +1,7 @@
 package inflearn.sort;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 class Interval {
@@ -38,16 +38,10 @@ public class SortTest2 {
 		SortTest2 test2 = new SortTest2();
 		test2.print(intervals);
 		System.out.println("----------------------------Sorting----------------------------");
-		test2.merge(intervals);
+		List<Interval> result = test2.merge(intervals);
 		System.out.println("----------------------------Done----------------------------");
-		test2.print(intervals);
+		test2.print(result);
 
-		List<Interval> result = new ArrayList<>();
-		Interval before = intervals.get(0);
-
-		for (int i = 1; i < intervals.size(); i++) {
-
-		}
 	}
 
 	public List<Interval> merge(List<Interval> intervals) {
@@ -56,8 +50,27 @@ public class SortTest2 {
 		}
 
 		// 1. sorting
-		intervals.sort(Comparator.comparingInt(a -> a.start));
-		return intervals;
+		// intervals.sort(Comparator.comparingInt(a -> a.start));
+		Collections.sort(intervals, (a, b) -> a.start - b.start);
+
+		List<Interval> result = new ArrayList<>();
+		Interval before = intervals.get(0);
+
+		for (int i = 1; i < intervals.size(); i++) {
+			Interval current = intervals.get(i);
+			if (before.end >= current.start) {
+				before.end = Math.max(current.end, before.end);
+			} else {
+				result.add(before);
+				before = current;
+			}
+		}
+
+		if (!result.contains(before)) {
+			result.add(before);
+		}
+
+		return result;
 	}
 
 	public void print(List<Interval> intervals) {
