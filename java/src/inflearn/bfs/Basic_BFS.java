@@ -33,8 +33,7 @@ public class Basic_BFS {
 			for (int j = 0; j < n; j++) {
 				if (grid[i][j] == '1') {
 					count++;
-					// bfs(grid, i, j);
-					recursive(grid, i, j);
+					bfs(grid, i, j);
 				}
 			}
 		}
@@ -59,16 +58,6 @@ public class Basic_BFS {
 					queue.offer(new int[] {x1, y1});
 				}
 			}
-		}
-	}
-
-	public void recursive(char[][] grid, int x, int y) {
-		if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1') {
-			return;
-		}
-		grid[x][y] = '0';
-		for (int[] dir : direction) {
-			recursive(grid, x + dir[0], y + dir[1]);
 		}
 	}
 }
