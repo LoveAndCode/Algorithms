@@ -31,7 +31,7 @@ public class Basic_BFS2 {
 		List<List<Integer>> result = new ArrayList<>();
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(root);
-		boolean isRevers = true;
+		boolean isNotReverse = true;
 
 		//2. for or while
 		while (!queue.isEmpty()) {
@@ -40,26 +40,21 @@ public class Basic_BFS2 {
 
 			for (int i = 0; i < size; i++) {
 				TreeNode node = queue.poll();
-				list.add(node.val);
 
-				if (isRevers) {
-					if (node.right != null) {
-						queue.offer(node.right);
-					}
-					if (node.left != null) {
-						queue.offer(node.left);
-					}
-					isRevers = false;
+				if (isNotReverse) {
+					list.add(node.val);
 				} else {
-					if (node.left != null) {
-						queue.offer(node.left);
-					}
-					if (node.right != null) {
-						queue.offer(node.right);
-					}
+					list.add(0, node.val);
 				}
 
+				if (node.left != null) {
+					queue.offer(node.left);
+				}
+				if (node.right != null) {
+					queue.offer(node.right);
+				}
 			}
+			isNotReverse = !isNotReverse;
 			result.add(list);
 		}
 
